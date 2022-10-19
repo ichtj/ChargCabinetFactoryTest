@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">ChargCabinetFactoryTest</string>
+    <string-array name="baudrate">
+        <item>1800</item>
+        <item>2400</item>
+        <item>4800</item>
+        <item>9600</item>
+        <item>19200</item>
+        <item>38400</item>
+        <item>115200</item>
+        <item>230400</item>
+        <item>460800</item>
+        <item>500000</item>
+        <item>576000</item>
+        <item>921600</item>
+        <item>1000000</item>
+        <item>1152000</item>
+        <item>1500000</item>
+        <item>2000000</item>
+    </string-array>
+    <string-array name="portnum">
+        <item>/dev/ttyS0</item>
+        <item>/dev/ttyS1</item>
+        <item>/dev/ttyS2</item>
+        <item>/dev/ttyS3</item>
+        <item>/dev/ttyS4</item>
+        <item>/dev/ttymxc0</item>
+        <item>/dev/ttymxc1</item>
+        <item>/dev/ttymxc2</item>
+        <item>/dev/ttymxc3</item>
+        <item>/dev/ttymxc4</item>
+        <item>/dev/ttymxc5</item>
+        <item>/dev/ttymxc6</item>
+    </string-array>
+</resources>
