@@ -1,258 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context=".MainActivity">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tvPortNum"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:text="地址："
-        android:textSize="25sp" />
-
-    <Spinner
-        android:id="@+id/spPortNum"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_toRightOf="@+id/tvPortNum"
-        android:entries="@array/portnum"
-        android:gravity="center" />
-
-    <TextView
-        android:id="@+id/tvBaudr"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
-        android:layout_toRightOf="@+id/spPortNum"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:text="波特率："
-        android:textSize="25sp" />
-
-    <Spinner
-        android:id="@+id/spBaudr"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_toRightOf="@+id/tvBaudr"
-        android:entries="@array/baudrate"
-        android:gravity="center" />
-
-    <TextView
-        android:id="@+id/tvModel"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_below="@+id/tvPortNum"
-        android:layout_marginBottom="20dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:text="型号：xxxx"
-        android:textSize="25sp" />
-
-
-    <TextView
-        android:id="@+id/tvNetStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_below="@+id/tvModel"
-        android:layout_marginBottom="20dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:text="当前网络状态：true"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/tvFwVersion"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_below="@+id/tvNetStatus"
-        android:layout_marginBottom="20dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:text="固件版本：v1.0"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/tvFan"
-        android:layout_width="310dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/tvFwVersion"
-        android:layout_marginBottom="20dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:text="风扇状态：开"
-        android:textSize="25sp" />
-
-    <Button
-        android:id="@+id/btnFan"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_below="@+id/tvFwVersion"
-        android:layout_marginLeft="15dp"
-        android:layout_toRightOf="@+id/tvFan"
-        android:drawableLeft="@drawable/ic_fan"
-        android:drawablePadding="15dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="20dp"
-        android:text="查询"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/tvSn"
-        android:layout_width="310dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/btnFan"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:text="序列号(SN)：xxxx"
-        android:textSize="25sp" />
-
-    <Button
-        android:id="@+id/btnGetSn"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_below="@+id/btnFan"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="50dp"
-        android:layout_toRightOf="@+id/tvSn"
-        android:drawableLeft="@drawable/ic_search"
-        android:drawablePadding="15dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="20dp"
-        android:text="查询"
-        android:textSize="25sp" />
-
-
-    <EditText
-        android:id="@+id/etSn"
-        android:layout_width="500dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/tvSn"
-        android:layout_marginBottom="20dp"
-        android:drawableLeft="@drawable/ic_serialnumber"
-        android:drawablePadding="15dp"
-        android:hint="请填写序列号(SN)"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:textColor="@color/black"
-        android:textSize="25sp" />
-
-    <Button
-        android:id="@+id/btnWriteSn"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_below="@+id/tvSn"
-        android:layout_marginLeft="15dp"
-        android:layout_toRightOf="@+id/etSn"
-        android:drawableLeft="@drawable/ic_write"
-        android:drawablePadding="15dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="20dp"
-        android:text="写入"
-        android:textSize="25sp" />
-
-    <LinearLayout
-        android:id="@+id/llLock"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etSn"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/ic_group"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="20dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvLockView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#8C8888" />
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        tools:context=".MainActivity">
 
         <Button
-            android:id="@+id/btnOpenLock"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
-            android:drawableLeft="@drawable/ic_openlock"
-            android:drawablePadding="15dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="20dp"
-            android:text="开锁"
-            android:textSize="25sp" />
-    </LinearLayout>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCharge"
-        android:background="@drawable/ic_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/llLock"
-        android:layout_gravity="center"
-        android:layout_marginBottom="40dp"
-        android:layout_weight="1"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="20dp" />
-
-
-    <LinearLayout
-        android:id="@+id/llTemp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rvCharge"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/ic_group"
-        android:orientation="horizontal"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="20dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTemp"
+            android:id="@+id/btnOCserial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1" />
-
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#8C8888" />
+            android:singleLine="true"
+            android:layout_toRightOf="@id/spBaudr"
+            android:text="开启串口" />
 
         <Button
-            android:id="@+id/btnTemp"
+            android:id="@+id/btnGetFan"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_gravity="center"
+            android:layout_below="@+id/tvFwVersion"
             android:layout_marginLeft="15dp"
-            android:drawableLeft="@drawable/ic_temp"
+            android:layout_toRightOf="@+id/tvFan"
+            android:drawableLeft="@drawable/ic_fan"
             android:drawablePadding="15dp"
             android:paddingLeft="8dp"
             android:paddingRight="20dp"
             android:text="查询"
             android:textSize="25sp" />
-    </LinearLayout>
+
+        <Button
+            android:id="@+id/btnGetSn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btnGetFan"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@+id/tvSn"
+            android:drawableLeft="@drawable/ic_search"
+            android:drawablePadding="15dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="20dp"
+            android:text="查询"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnWriteSn"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_below="@+id/tvSn"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/etSn"
+            android:drawableLeft="@drawable/ic_write"
+            android:drawablePadding="15dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="20dp"
+            android:text="写入"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/etSn"
+            android:layout_width="500dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/tvSn"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/ic_serialnumber"
+            android:drawablePadding="15dp"
+            android:hint="请填写序列号(SN)"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+        <LinearLayout
+            android:id="@+id/llLock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etSn"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/ic_group"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp">
 
 
-</RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLockView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#8C8888" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/btnOpenLock"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/ic_openlock"
+                    android:drawablePadding="15dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="20dp"
+                    android:text="开锁"
+                    android:textSize="25sp" />
+                <Button
+                    android:id="@+id/btnOpenAllLock"
+                    android:text="全开"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_openlock"
+                    android:drawablePadding="15dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="20dp"
+                    android:textSize="25sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llTemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rvCharge"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/ic_group"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#8C8888" />
+            <Button
+                android:id="@+id/btnTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:drawableLeft="@drawable/ic_temp"
+                android:drawablePadding="8dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="20dp"
+                android:text="查询"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/spPortNum"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/tvPortNum"
+            android:entries="@array/portnum"
+            android:gravity="center" />
+
+        <Spinner
+            android:id="@+id/spBaudr"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@+id/tvBaudr"
+            android:entries="@array/baudrate"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvPortNum"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="地址："
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tvBaudr"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@+id/spPortNum"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="波特率："
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tvModel"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tvPortNum"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="型号：xxxx"
+            android:textSize="25sp" />
+
+
+        <TextView
+            android:id="@+id/tvNetStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tvModel"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="当前网络状态：true"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tvFwVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tvNetStatus"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="固件版本：v1.0"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tvFan"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/tvFwVersion"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="风扇状态：开"
+            android:textSize="25sp" />
+
+
+        <TextView
+            android:id="@+id/tvSn"
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/btnGetFan"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="序列号(SN)：xxxx"
+            android:textSize="25sp" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCharge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llLock"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_group"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp" />
+
+
+    </RelativeLayout>
+</ScrollView>
